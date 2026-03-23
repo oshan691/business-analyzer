@@ -21,7 +21,7 @@ st.markdown("""
 try:
     api_key = st.secrets["GEMINI_API_KEY"]
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('Gemini 3 Flash Preview')
+    model = genai.GenerativeModel('Gemini 3.1 Flash lite preview')
 except:
     st.error("කරුණාකර Gemini API Key එක Secrets වල ඇතුළත් කරන්න.")
 
