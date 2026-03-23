@@ -4,15 +4,64 @@ import pandas as pd
 import plotly.express as px
 import os
 
-# 1. UI සැකසුම් (Branding)
-st.set_page_config(page_title="Pro Business AI", page_icon="📈", layout="wide")
+import streamlit as st
 
-# Custom CSS - UI එක තවත් ලස්සන කිරීමට
+# පිටුවේ සැකසුම් (Page Config)
+st.set_page_config(page_title="Data Engine AI", layout="wide")
+
+# අති නවීන UI එක සඳහා CSS
 st.markdown("""
     <style>
-    .main { background-color: #f8f9fa; }
-    .stButton>button { background-color: #007bff; color: white; border-radius: 10px; border: none; font-weight: bold; }
-    .stTextInput>div>div>input { border-radius: 10px; }
+    /* මුළු පිටුවේම පසුබිම */
+    .stApp {
+        background-color: #F8F9FC;
+    }
+
+    /* Sidebar එක අලුත් ඩිසයින් එකට සැකසීම */
+    [data-testid="stSidebar"] {
+        background-color: #FFFFFF;
+        border-right: 1px solid #E2E8F0;
+    }
+
+    /* Sidebar අකුරු */
+    [data-testid="stSidebar"] .stMarkdown p {
+        color: #4A5568;
+        font-weight: 500;
+    }
+
+    /* ප්‍රධාන කාඩ් එක (Main Container) */
+    .main .block-container {
+        padding: 3rem;
+        max-width: 1100px;
+    }
+
+    /* Buttons - පින්තූරයේ ඇති වයලට් පාටට හුරු කිරීම */
+    .stButton>button {
+        background-color: #6366F1;
+        color: white;
+        border-radius: 12px;
+        padding: 0.6rem 1.5rem;
+        border: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .stButton>button:hover {
+        background-color: #4F46E5;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Metrics (ඉලක්කම් පෙන්වන කාඩ්ස්) */
+    [data-testid="stMetricValue"] {
+        color: #1A202C;
+        font-size: 2rem !important;
+    }
+    
+    /* Input Box */
+    .stTextInput>div>div>input {
+        border-radius: 12px;
+        border: 1px solid #E2E8F0;
+    }
     </style>
     """, unsafe_allow_html=True)
 
