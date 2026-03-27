@@ -22,7 +22,7 @@ st.markdown("""
 
 # 3. API Setup
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 # 4. Sidebar (මෙතනට ඔයාගේ Brand එක දාන්න පුළුවන්)
 with st.sidebar:
